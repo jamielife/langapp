@@ -4,7 +4,7 @@ import type { Theme } from '@react-navigation/native/src/types';
 // Define the config
 const config = {
   useSystemColorMode: false,
-  initialColorMode: "dark",
+  initialColorMode: "light",
   background: 'transparent'
 };
 
