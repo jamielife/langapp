@@ -1,6 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import {Pressable, useTheme } from 'native-base';
+import { color } from 'native-base/lib/typescript/theme/styled-system';
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -12,11 +13,12 @@ function TabBarIcon(props: {
 export default function TabLayout() {
 	const { colors } = useTheme();	
 	const tabColor:string = colors["primary"][400];
+	const testGreen:string = colors.secondary["500"]
 
 	return (
 			<Tabs
 				screenOptions={{
-					tabBarActiveTintColor: colors["primary"][500],
+					tabBarActiveTintColor: colors["primary"][500],				
 					tabBarStyle: {
 						height: 90,
 						paddingHorizontal: 5,
@@ -25,23 +27,23 @@ export default function TabLayout() {
 						//padding: 20,
 						//backgroundColor: 'rgba(34,36,40,1)',
 						//position: 'absolute',
-						borderTopWidth: 0,
+						borderTopWidth: 0,						
 					},					
 				}}>
 				<Tabs.Screen
 				name="index"
 				options={{
-					title: 'Tab One',
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={tabColor} />,
+					title: 'LangAppTBD',
+					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={"gray"} />,
 					headerRight: () => (
 					<Link href="/modal" asChild>
 						<Pressable>
 						{({ isPressed }) => (
 							<FontAwesome
-							name="info-circle"
-							size={25}
-							//color={theme.colors.secondary[400]}
-							style={{ marginRight: 15, opacity: isPressed ? 0.5 : 1 }}
+								name="info-circle"
+								size={25}
+								color={"gray"}
+								style={{ marginRight: 15, opacity: isPressed ? 0.5 : 1 }}
 							/>
 						)}
 						</Pressable>
@@ -53,7 +55,7 @@ export default function TabLayout() {
 				name="two"
 				options={{
 					title: 'Tab Two',
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={tabColor} />,
+					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={"gray"} />,
 				}}
 				/>
 			</Tabs>

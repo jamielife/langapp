@@ -11,7 +11,7 @@ const tweets = [
     createdAt: '2020-08-27T12:00:00.000Z',
     content: 'Can you please check if the Subscribe button on Youtube works?',
     image:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/thumbnail.png',
+      'https://jamietaylor.me/static/media/jamietaylor-ramen.webp',
     numberOfComments: 123,
     numberOfRetweets: 11,
     numberOfLikes: 10,
@@ -22,8 +22,8 @@ const tweets = [
     createdAt: '2023-04-28T08:30:00.000Z',
     user: {
       id: '123456789',
-      name: 'Jeff B',
-      username: 'bezos',
+      name: 'Geoffrey',
+      username: 'getOffme',
       image:
         'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg',
     },
@@ -39,8 +39,8 @@ const tweets = [
     createdAt: '2023-04-27T19:45:00.000Z',
     user: {
       id: '987654321',
-      name: 'Zuck',
-      username: 'zuck',
+      name: 'Jim Beam',
+      username: 'jbeammy',
       image:
         'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg',
     },
