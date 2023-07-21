@@ -36,6 +36,7 @@ export default function RootLayout() {
   );
 }
 
+//https://expo.github.io/router/docs/ 
 function RootLayoutNav() {
  
 	return (
