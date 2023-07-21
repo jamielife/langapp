@@ -15,6 +15,7 @@ const tweets = [
     numberOfComments: 123,
     numberOfRetweets: 11,
     numberOfLikes: 10,
+    impressions: 0,
   },
   {
     id: '111111111',
