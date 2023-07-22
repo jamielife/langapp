@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { View, Text, Avatar, Image, HStack, TextArea, Button } from "native-base"
+import { View, Avatar, HStack, TextArea, Button } from "native-base"
 import { useRouter } from 'expo-router';
 
 /*  possible need here to remove headerbar * add safeareacontainter 
