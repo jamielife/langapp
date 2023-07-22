@@ -1,23 +1,10 @@
-import { View, Text, Image, Avatar, HStack, VStack, AspectRatio, IconButton } from 'native-base'
+import { View, Text, Image, Avatar, HStack, VStack, AspectRatio } from 'native-base'
 import { PostType } from '../constants/Types';
-import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons'; 
-import { IconButtonProps } from '@expo/vector-icons/build/createIconSet';
+import { Entypo } from '@expo/vector-icons'; 
+import FooterButton from './FooterButton';
 
 export type PostProps = {
     post: PostType
-}
-
-type FooterButtonProps = {
-    icon: any;
-    text?: string | number;
-}
-
-const FooterButton = ({icon, text}: FooterButtonProps) => {
-    return(
-        <View flexDir={"row"} alignItems={"center"}>
-            <MaterialCommunityIcons name={icon} size={24} color="gray" /><Text fontSize={16} color={"warmGray.400"}>{text}</Text>
-        </View>
-    )
 }
 
 const PostView = ({ post }:PostProps ) => {
