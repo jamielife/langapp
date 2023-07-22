@@ -14,7 +14,7 @@ const user = {
 }
 
 export default function NewPost(){
-    const [postContent, setPostContent] =  useState("");
+    const [postContent, setPostContent] = useState(String);
     const router = useRouter();
     
     const submitPost = () => {
