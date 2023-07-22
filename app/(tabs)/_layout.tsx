@@ -1,7 +1,6 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import {Pressable, useTheme } from 'native-base';
-import { color } from 'native-base/lib/typescript/theme/styled-system';
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -34,7 +33,7 @@ export default function TabLayout() {
 				name="index"
 				options={{
 					title: 'LangAppTBD',
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={"gray"} />,
+					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
 					headerRight: () => (
 					<Link href="/modal" asChild>
 						<Pressable>
@@ -55,7 +54,7 @@ export default function TabLayout() {
 				name="two"
 				options={{
 					title: 'Tab Two',
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={"gray"} />,
+					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
 				}}
 				/>
 			</Tabs>
