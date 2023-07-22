@@ -1,10 +1,11 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { SplashScreen, Stack } from 'expo-router';
+import { SplashScreen, Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
-import { NativeBaseProvider, useColorMode, useColorModeValue } from 'native-base';
+import { NativeBaseProvider, Icon, Pressable, Button } from 'native-base';
 import { theme, DarkTheme, DefaultTheme } from '../constants/Theme';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -38,7 +39,8 @@ export default function RootLayout() {
 
 //https://expo.github.io/router/docs/ 
 function RootLayoutNav() {
- 
+	const router = useRouter();
+
 	return (
 		<NativeBaseProvider theme={theme}>    
 			<ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>
@@ -46,6 +48,13 @@ function RootLayoutNav() {
 					<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 					<Stack.Screen name="modal" options={{ presentation: 'modal' }} />
 					<Stack.Screen name="post/[id]" options={{ title: "Post" }} />
+					<Stack.Screen name="new-post" options={{ title: "New Post!", 
+           				headerLeft:() => ( 							
+							<Pressable onPress={ ()=>{ router.back() } }>
+								<Icon as={MaterialIcons} name="close" ml={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
+							</Pressable>
+						),
+						headerRight:() => ( <Button mr={3}>Post</Button> ) }} />
 				</Stack>
 			</ThemeProvider>
 		</NativeBaseProvider>
