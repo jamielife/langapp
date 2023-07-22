@@ -80,11 +80,11 @@ export const DarkTheme: Theme = {
 	dark: true,
 	colors: {
 	  primary: colors.primary[500],
-	  background: 'rgb(1, 1, 1)',
-	  card: 'rgb(18, 18, 18)',
-	  text: colors.secondary[100],
+	  background: 'rgb(0, 0, 0)',
+	  card: 'rgb(0, 0, 0)',
+	  text: colors.tertiary[50],
 	  border: 'rgb(39, 39, 41)',
-	  notification: 'rgb(255, 69, 58)',
+	  notification: 'rgb(58, 193, 255)',
 	},
 };
 
@@ -92,7 +92,7 @@ export const DefaultTheme: Theme = {
 	dark: false,
 	colors: {
 	  primary: 'rgb(0, 122, 255)',
-	  background: 'rgb(242, 242, 242)',
+	  background: 'white',
 	  card: 'rgb(255, 255, 255)',
 	  text: 'rgb(28, 28, 30)',
 	  border: 'rgb(216, 216, 216)',
