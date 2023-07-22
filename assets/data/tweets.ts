@@ -1,5 +1,23 @@
 const tweets = [
   {
+    id: 'jl001',
+    user: {
+      id: 'ul000001',
+      username: 'jamielife',
+      name: 'Jamie Taylor',
+      image:
+        'https://2.gravatar.com/avatar/e529653809f90533471211fca7717069',
+    },
+    createdAt: '2023-06-27T12:00:00.000Z',
+    content: 'YoutubeのSubscribeボタンが機能するかどうか確認してもらえますか？',
+    image:
+      'https://jamietaylor.me/static/media/jamietaylor-ramen.webp',
+    numberOfComments: 123,
+    numberOfRetweets: 11,
+    numberOfLikes: 10,
+    impressions: 0,
+  },
+  {
     id: 't0',
     user: {
       id: 'u1',
@@ -11,7 +29,7 @@ const tweets = [
     createdAt: '2020-08-27T12:00:00.000Z',
     content: 'Can you please check if the Subscribe button on Youtube works?',
     image:
-      'https://jamietaylor.me/static/media/jamietaylor-ramen.webp',
+      'https://images.unsplash.com/photo-1492012327145-ae49592e5f6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
     numberOfComments: 123,
     numberOfRetweets: 11,
     numberOfLikes: 10,

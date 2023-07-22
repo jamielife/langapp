@@ -1,4 +1,4 @@
-import { View, Text, Image, Avatar, HStack, VStack, FlatList } from 'native-base'
+import { View, FlatList } from 'native-base'
 import tweets from '../../assets/data/tweets';
 import PostView from '../../components/PostView';
 
