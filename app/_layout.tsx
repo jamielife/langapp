@@ -51,7 +51,7 @@ function RootLayoutNav() {
 					<Stack.Screen name="new-post" options={{ title: "New Post!", 
            				headerLeft:() => ( 							
 							<Pressable onPress={ ()=>{ router.back() } }>
-								<Icon as={MaterialIcons} name="close" ml={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
+								<Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
 							</Pressable>
 						),
 						headerRight:() => ( <Button mr={3}>Post</Button> ) }} />

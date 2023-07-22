@@ -1,9 +1,6 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { View, Avatar, HStack, TextArea, Button } from "native-base"
-import { useRouter } from 'expo-router';
-
-/*  possible need here to remove headerbar * add safeareacontainter 
-    and custom build if existing navigator header can't acces page */
+import { useRouter, useNavigation } from 'expo-router';
 
 const user = {
     id: 'ul000001',
@@ -14,9 +11,18 @@ const user = {
 }
 
 export default function NewPost(){
-    const [postContent, setPostContent] = useState(String);
+    const [postContent, setPostContent] = useState("");
     const router = useRouter();
+    const navigation = useNavigation();
     
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <Button onPress={submitPost} mr={3}>Post</Button>
+            ),
+        });
+      }, [navigation, postContent]);    
+
     const submitPost = () => {
         // Check that message is set and of x length
         // Sanitize?
@@ -27,7 +33,6 @@ export default function NewPost(){
   
     return(
         <View padding={3} flex={1}>
-            <Button onPress={submitPost}>Post</Button>
             <HStack>
                 <Avatar bg="primary.400" source={{ uri: user.image }} size={"md"}>
                     {/* If is friend - show status? Or show country here */}
