@@ -14,7 +14,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: '(drawer)',
 };
 
 export default function RootLayout() {
@@ -45,15 +45,16 @@ function RootLayoutNav() {
 		<NativeBaseProvider theme={theme}>    
 			<ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>
 				<Stack>
-					<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-					<Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+					<Stack.Screen name="(drawer)"  options={{ headerShown: false }} />
+					<Stack.Screen name="(tabs)"    options={{ headerShown: false }} />
+					<Stack.Screen name="modal"     options={{ presentation: 'modal' }} />
 					<Stack.Screen name="post/[id]" options={{ title: "Post" }} />
-					<Stack.Screen name="new-post" options={{ title: "New Post!", 
-           				headerLeft:() => ( 							
-							<Pressable onPress={ ()=>{ router.back() } }>
-								<Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
-							</Pressable>
-						),
+					<Stack.Screen name="new-post"  options={{ title: "New Post!", 
+            headerLeft:() => ( 							
+              <Pressable onPress={ ()=>{ router.back() } }>
+                <Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
+              </Pressable>
+            ),
 						headerRight:() => ( <Button mr={3}>Post</Button> ) }} />
 				</Stack>
 			</ThemeProvider>
