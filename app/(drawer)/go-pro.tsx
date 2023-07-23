@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native';
+import { View, Text } from 'native-base';
 
-const GoPro = () => {
+const Favorites = () => {
     return (
-        <View style={{ justifyContent: "center", alignContent: "center" }}>
-            <Text style={{ color: "gray" }}>Go Pro Today!</Text>        
+        <View p={3} flex={1} style={{ justifyContent: "center", alignContent: "center" }}>
+            <Text style={{ color: "gray" }}>Go Pro Today for $1,000,000 USD!</Text>        
         </View>
       );    
 }
 
-export default GoPro;
+export default Favorites;

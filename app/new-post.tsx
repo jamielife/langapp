@@ -35,7 +35,6 @@ export default function NewPost(){
         <View padding={3} flex={1}>
             <HStack>
                 <Avatar bg="primary.400" source={{ uri: user.image }} size={"md"}>
-                    {/* If is friend - show status? Or show country here */}
                     <Avatar.Badge bg="primary.400"></Avatar.Badge>
                 </Avatar>
                 <TextArea h={"500px"} placeholder="What's new?" ml={2} flex={1} autoCompleteType={""} variant="unstyled" autoFocus

@@ -1,7 +1,7 @@
 import { View, FlatList } from 'native-base'
-import tweets from '../../assets/data/tweets';
-import PostView from '../../components/PostView';
-import FabMenu from '../../components/FabMenu';
+import tweets from '../../../assets/data/tweets';
+import PostView from '../../../components/PostView';
+import FabMenu from '../../../components/FabMenu';
 
 
 export default function TabOneScreen() {

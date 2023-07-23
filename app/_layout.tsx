@@ -46,7 +46,6 @@ function RootLayoutNav() {
 			<ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>
 				<Stack>
 					<Stack.Screen name="(drawer)"  options={{ headerShown: false }} />
-					<Stack.Screen name="(tabs)"    options={{ headerShown: false }} />
 					<Stack.Screen name="modal"     options={{ presentation: 'modal' }} />
 					<Stack.Screen name="post/[id]" options={{ title: "Post" }} />
 					<Stack.Screen name="new-post"  options={{ title: "New Post!", 

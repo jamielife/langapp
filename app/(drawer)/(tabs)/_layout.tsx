@@ -1,6 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import {Pressable, useTheme } from 'native-base';
+import ProfileMenuIcon from '../../../components/ProfileMenuIcon';
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -11,8 +12,6 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
 	const { colors } = useTheme();	
-	const tabColor:string = colors["primary"][400];
-	const testGreen:string = colors.secondary["500"]
 
 	return (
 			<Tabs
@@ -35,19 +34,22 @@ export default function TabLayout() {
 					title: 'LangAppTBD',
 					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
 					headerRight: () => (
-					<Link href="/modal" asChild>
-						<Pressable>
-						{({ isPressed }) => (
-							<FontAwesome
-								name="info-circle"
-								size={25}
-								color={"gray"}
-								style={{ marginRight: 15, opacity: isPressed ? 0.5 : 1 }}
-							/>
-						)}
-						</Pressable>
-					</Link>
+						<Link href="/modal" asChild>
+							<Pressable>
+								{({ isPressed }) => (
+									<FontAwesome
+										name="info-circle"
+										size={25}
+										color={"gray"}
+										style={{ marginRight: 15, opacity: isPressed ? 0.5 : 1 }}
+									/>
+								)}
+							</Pressable>
+						</Link>
 					),
+					headerLeft: () => (
+						<ProfileMenuIcon />
+					)
 				}}
 				/>
 				<Tabs.Screen
