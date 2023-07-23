@@ -3,9 +3,10 @@ import { ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
-import { NativeBaseProvider, Icon, Pressable, Button } from 'native-base';
+import { NativeBaseProvider, Icon, Pressable, Button, View } from 'native-base';
 import { theme, DarkTheme, DefaultTheme } from '../constants/Theme';
 import { MaterialIcons } from '@expo/vector-icons';
+import { Platform } from 'react-native';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -46,9 +47,9 @@ function RootLayoutNav() {
 			<ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>
 				<Stack>
 					<Stack.Screen name="(drawer)"  options={{ headerShown: false }} />
-					<Stack.Screen name="modal"     options={{ presentation: 'modal' }} />
-					<Stack.Screen name="post/[id]" options={{ title: "Post" }} />
-					<Stack.Screen name="new-post"  options={{ title: "New Post!", 
+					<Stack.Screen name="modal"     options={{ title: 'options', presentation: Platform.OS === 'android' ? 'transparentModal' : 'card' }} />
+					<Stack.Screen name="post/[id]" options={{ title: "Post", presentation: 'transparentModal' }} />
+					<Stack.Screen name="new-post"  options={{ title: "New Post!",  presentation: 'transparentModal', 
             headerLeft:() => ( 							
               <Pressable onPress={ ()=>{ router.back() } }>
                 <Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />

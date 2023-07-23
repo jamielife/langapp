@@ -14,7 +14,7 @@ export default function TabLayout() {
 	const { colors } = useTheme();	
 
 	return (
-			<Tabs
+			<Tabs sceneContainerStyle={{backgroundColor: 'black'}}
 				screenOptions={{
 					tabBarActiveTintColor: colors["primary"][500],				
 					tabBarStyle: {

@@ -1,7 +1,7 @@
 import PostView from "../../components/PostView";
 import tweets from "../../assets/data/tweets";
 import { useSearchParams } from "expo-router";
-import { Text } from "native-base";
+import { Text, View } from "native-base";
 
 export default function PostScreen() {
     const { id } = useSearchParams();
@@ -12,6 +12,8 @@ export default function PostScreen() {
     }
 
     return(
-        <PostView post={post} />
+        <View p={3} flex={1} bg={"rgba(0,0,0,.93)"}>
+            <PostView post={post} />
+        </View>
     )
 }

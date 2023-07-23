@@ -4,7 +4,7 @@ import type { Theme } from '@react-navigation/native/src/types';
 // Define the config
 const config = {
   useSystemColorMode: false,
-  initialColorMode: "light",
+  initialColorMode: "dark",
   background: 'transparent'
 };
 
@@ -71,30 +71,34 @@ const colors = {
 	  700: "#304b3f",
 	  800: "#1c2c24",
 	  900: "#0e1612",
+	},
+	custom: {
+		darkBG: "rgba(5,5,5,1)",
+		liteBG: "rgb(240,240, 240)"
 	}
 }
 
 export const DarkTheme: Theme = {
 	dark: true,
 	colors: {
-	  primary: colors.primary[500],
-	  background: 'rgb(0, 0, 0)',
-	  card: 'rgb(0, 0, 0)',
-	  text: colors.tertiary[50],
-	  border: 'rgb(39, 39, 41)',
-	  notification: 'rgb(58, 193, 255)',
+	  primary: 	  	colors.primary[500],
+	  background: 	colors.custom["darkBG"],
+	  card: 	  	colors.custom["darkBG"],
+	  text: 	  	colors.tertiary[50],
+	  border: 	  	colors.custom["darkBG"],
+	  notification: colors.primary[500],
 	},
 };
 
 export const DefaultTheme: Theme = {
 	dark: false,
 	colors: {
-	  primary: 'rgb(0, 122, 255)',
-	  background: 'white',
-	  card: 'rgb(255, 255, 255)',
-	  text: 'rgb(28, 28, 30)',
-	  border: 'rgb(216, 216, 216)',
-	  notification: 'rgb(255, 59, 48)',
+	  primary: 		colors.primary[700],
+	  background: 	colors.custom["liteBG"],
+	  card: 		colors.custom["liteBG"],
+	  text: 		colors.custom["darkBG"],
+	  border: 		colors.custom["liteBG"],
+	  notification: colors.primary[700],
 	},
   };
 

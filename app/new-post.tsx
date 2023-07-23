@@ -32,12 +32,12 @@ export default function NewPost(){
     }
   
     return(
-        <View padding={3} flex={1}>
+        <View p={3} flex={1} bg={"rgba(0,0,0,.93)"}>
             <HStack>
                 <Avatar bg="primary.400" source={{ uri: user.image }} size={"md"}>
                     <Avatar.Badge bg="primary.400"></Avatar.Badge>
                 </Avatar>
-                <TextArea h={"500px"} placeholder="What's new?" ml={2} flex={1} autoCompleteType={""} variant="unstyled" autoFocus
+                <TextArea fontSize={18} h={"500px"} placeholder="What's new?" ml={2} flex={1} autoCompleteType={""} variant="unstyled" autoFocus
                 value={postContent} onChangeText={(newValue) => setPostContent(newValue)} />
             </HStack>
         </View>

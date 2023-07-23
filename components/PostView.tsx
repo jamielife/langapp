@@ -1,18 +1,20 @@
-import { View, Text, Image, Avatar, HStack, VStack, AspectRatio } from 'native-base'
+import { View, Text, Image, Avatar, HStack, VStack, AspectRatio, Pressable } from 'native-base'
 import { PostType } from '../constants/Types';
 import { Entypo } from '@expo/vector-icons'; 
 import FooterButton from './FooterButton';
-import { Link } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 export type PostProps = {
     post: PostType
 }
 
 const PostView = ({ post }:PostProps ) => {
+    const router = useRouter();
+
 	return (
-        <Link href={`/post/${post.id}`} style={{ display: "flex"}} >
-            <HStack p={3} borderBottomWidth={1} borderBottomColor={"tertiary.200:alpha.50"}
-                justifyContent={"flex-start"} w={"100%"}>
+        <Pressable onPress={() => router.push(`/post/${post.id}`)}>
+            <HStack my={2} p={3} rounded={"xl"} justifyContent={"flex-start"}  alignContent={"center"} w={"100%"}
+                borderBottomWidth={1} bg={"white"} borderBottomColor={"tertiary.200:alpha.50"} _dark={{ bg: "dark.50:alpha.50",  borderBottomColor: "black" }}>
                 <Avatar bg="primary.400" source={{ uri: post.user.image }} size={"md"}>
                     {/* If is friend - show status? Or show country here */}
                     <Avatar.Badge bg="primary.400"></Avatar.Badge>
@@ -39,7 +41,7 @@ const PostView = ({ post }:PostProps ) => {
                     </HStack>
                 </VStack>
             </HStack>
-        </Link>
+        </Pressable>
 	);
 }
  
