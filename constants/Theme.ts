@@ -3,50 +3,76 @@ import type { Theme } from '@react-navigation/native/src/types';
 
 // Define the config
 const config = {
-  useSystemColorMode: false,
-  initialColorMode: "dark",
-  background: 'transparent'
+	useSystemColorMode: false,
+	initialColorMode: "light",
+	background: 'transparent'
 };
 
 const colors = {
-	primary: {
-	  50: "#fff5f7",
-	  100: "#ffe6ea",
-	  200: "#ffccd6",
-	  300: "#ffa4b4",
-	  400: "#fe4365",
-	  500: "#e9012c",
-	  600: "#a7011f",
-	  700: "#7a0117",
-	  800: "#47000d",
-	  900: "#240007",
-	  950: "#140004"
+	primary: { //laser-lemon - 300
+		50: '#feffe5',
+		100: '#faffc7',
+		200: '#f3ff95',
+		300: '#e9ff70',
+		400: '#d3f625',
+		500: '#b5dd05',
+		600: '#8db100',
+		700: '#698605',
+		800: '#54690b',
+		900: '#46590e',
+		950: '#243201',
 	},
-	secondary: {
-	  50: "#fff5f5",
-	  100: "#fee7e6",
-	  200: "#fdcfce",
-	  300: "#fca9a6",
-	  400: "#fc9d9a",
-	  500: "#e40e07",
-	  600: "#a30a05",
-	  700: "#770804",
-	  800: "#450402",
-	  900: "#230201",
-	  950: "#140101"
+	secondary: { //kournikova - 200
+		50: '#fff9eb',
+		100: '#ffefc6',
+		200: '#ffd670',
+		300: '#ffc54a',
+		400: '#ffae20',
+		500: '#f98a07',
+		600: '#dd6402',
+		700: '#b74406',
+		800: '#94330c',
+		900: '#7a2b0d',
+		950: '#461402',
 	},
-	tertiary: {
-	  50: "#fef9f6",
-	  100: "#fdf0e7",
-	  200: "#fbe2d0",
-	  300: "#f9cbaa",
-	  400: "#f29654",
-	  500: "#da6410",
-	  600: "#9d480c",
-	  700: "#723409",
-	  800: "#421f05",
-	  900: "#210f02",
-	  950: "#130901"
+	tertiary: { //atomic-tangerine - 300
+		50: '#fff3ed',
+		100: '#ffe3d4',
+		200: '#ffc3a9',
+		300: '#ff9770',
+		400: '#fe6339',
+		500: '#fc3a13',
+		600: '#ed2109',
+		700: '#c51309',
+		800: '#9c1210',
+		900: '#7e1210',
+		950: '#440607',
+	},
+	pink: { //hot-pink - 400
+		50: '#fef1f6',
+		100: '#fee5ef',
+		200: '#ffcbe1',
+		300: '#ffa1c7',
+		400: '#ff70a6',
+		500: '#fa3a7d',
+		600: '#ea1856',
+		700: '#cc0a3f',
+		800: '#a80c34',
+		900: '#8c0f2f',
+		950: '#560117',		
+	},
+	cyan:{ // malibu - 300
+		50: '#f0faff',
+		100: '#dff3ff',
+		200: '#b8e9ff',
+		300: '#70d6ff',
+		400: '#33c6fd',
+		500: '#09afee',
+		600: '#008ccc',
+		700: '#0070a5',
+		800: '#045f88',
+		900: '#0a4f70',
+		950: '#06314b',		
 	},
 	warmGray: {
 	  50: "#fbfbf9",
@@ -60,18 +86,6 @@ const colors = {
 	  800: "#2c2c1c",
 	  900: "#16160e",
 	},
-	green: {
-	  50: "#f9fbfa",
-	  100: "#eff5f3",
-	  200: "#e0ebe6",
-	  300: "#c7dbd2",
-	  400: "#8fb7a5",
-	  500: "#5b8f78",
-	  600: "#426756",
-	  700: "#304b3f",
-	  800: "#1c2c24",
-	  900: "#0e1612",
-	},
 	custom: {
 		darkBG: "rgba(5,5,5,1)",
 		liteBG: "rgb(240,240, 240)"
@@ -81,24 +95,24 @@ const colors = {
 export const DarkTheme: Theme = {
 	dark: true,
 	colors: {
-	  primary: 	  	colors.primary[500],
-	  background: 	colors.custom["darkBG"],
-	  card: 	  	colors.custom["darkBG"],
-	  text: 	  	colors.tertiary[50],
-	  border: 	  	colors.custom["darkBG"],
-	  notification: colors.primary[500],
+		primary: 	  	colors.primary[500],
+		background: 	colors.custom["darkBG"],
+		card: 	  		colors.custom["darkBG"],
+		text: 	  		colors.tertiary[50],
+		border: 	  	colors.custom["darkBG"],
+		notification: 	colors.primary[500],
 	},
 };
 
 export const DefaultTheme: Theme = {
 	dark: false,
 	colors: {
-	  primary: 		colors.primary[700],
-	  background: 	colors.custom["liteBG"],
-	  card: 		colors.custom["liteBG"],
-	  text: 		colors.custom["darkBG"],
-	  border: 		colors.custom["liteBG"],
-	  notification: colors.primary[700],
+		primary: 		colors.primary[700],
+		background: 	colors.custom["liteBG"],
+		card: 			colors.custom["liteBG"],
+		text: 			colors.custom["darkBG"],
+		border: 		colors.custom["liteBG"],
+		notification: 	colors.primary[700],
 	},
   };
 

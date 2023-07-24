@@ -32,7 +32,7 @@ export default function NewPost(){
     }
   
     return(
-        <View p={3} flex={1} bg={"rgba(0,0,0,.93)"}>
+        <View p={3} flex={1} bg={"rgba(255,255,255,.97)"} _dark={{ bg: "rgba(0,0,0,.93)" }}>
             <HStack>
                 <Avatar bg="primary.400" source={{ uri: user.image }} size={"md"}>
                     <Avatar.Badge bg="primary.400"></Avatar.Badge>

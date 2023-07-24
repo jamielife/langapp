@@ -3,7 +3,7 @@ import { ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
-import { NativeBaseProvider, Icon, Pressable, Button, View } from 'native-base';
+import { NativeBaseProvider, Icon, Pressable, Button, StatusBar } from 'native-base';
 import { theme, DarkTheme, DefaultTheme } from '../constants/Theme';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Platform } from 'react-native';
@@ -43,21 +43,24 @@ function RootLayoutNav() {
 	const router = useRouter();
 
 	return (
-		<NativeBaseProvider theme={theme}>    
-			<ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>
-				<Stack>
-					<Stack.Screen name="(drawer)"  options={{ headerShown: false }} />
-					<Stack.Screen name="modal"     options={{ title: 'options', presentation: Platform.OS === 'android' ? 'transparentModal' : 'card' }} />
-					<Stack.Screen name="post/[id]" options={{ title: "Post", presentation: 'transparentModal' }} />
-					<Stack.Screen name="new-post"  options={{ title: "New Post!",  presentation: 'transparentModal', 
-            headerLeft:() => ( 							
-              <Pressable onPress={ ()=>{ router.back() } }>
-                <Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
-              </Pressable>
-            ),
-						headerRight:() => ( <Button mr={3}>Post</Button> ) }} />
-				</Stack>
-			</ThemeProvider>
-		</NativeBaseProvider>
+    <>
+      <StatusBar animated barStyle={theme.config.initialColorMode === 'dark' ? "light-content" : "dark-content"}/>
+      <NativeBaseProvider theme={theme}>
+        <ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>      
+          <Stack>
+            <Stack.Screen name="(drawer)"  options={{ headerShown: false }} />
+            <Stack.Screen name="modal"     options={{ title: 'options', presentation: Platform.OS === 'android' ? 'transparentModal' : 'card' }} />
+            <Stack.Screen name="post/[id]" options={{ title: "Post", presentation: 'transparentModal' }} />
+            <Stack.Screen name="new-post"  options={{ title: "New Post!",  presentation: 'transparentModal', 
+              headerLeft:() => ( 							
+                <Pressable onPress={ ()=>{ router.back() } }>
+                  <Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
+                </Pressable>
+              ),
+              headerRight:() => ( <Button mr={3}>Post</Button> ) }} />
+          </Stack>
+        </ThemeProvider>
+      </NativeBaseProvider>
+    </>
 	);
 }

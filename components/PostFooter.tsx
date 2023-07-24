@@ -9,7 +9,7 @@ type FooterButtonProps = {
 const FooterButton = ({icon, text}: FooterButtonProps) => {
     return(
         <View flexDir={"row"} alignItems={"center"}>
-            <MaterialCommunityIcons name={icon} size={18} color="gray" /><Text fontSize={16} color={"warmGray.400"}>{text}</Text>
+            <MaterialCommunityIcons name={icon} size={18} color="black" /><Text fontSize={16} color={"black"}>{text}</Text>
         </View>
     )
 }

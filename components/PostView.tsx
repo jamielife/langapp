@@ -1,23 +1,25 @@
-import { View, Text, Image, Avatar, HStack, VStack, AspectRatio, Pressable } from 'native-base'
+import { View, Text, Image, HStack, VStack, Avatar, Pressable } from 'native-base'
 import { PostType } from '../constants/Types';
 import { Entypo } from '@expo/vector-icons'; 
-import FooterButton from './FooterButton';
+import FooterButton from './PostFooter';
 import { useRouter } from 'expo-router';
 
 export type PostProps = {
-    post: PostType
+    post: PostType;
+    randomColor: any; 
 }
 
-const PostView = ({ post }:PostProps ) => {
+const PostView = ({ post, randomColor }:PostProps ) => {
     const router = useRouter();
 
 	return (
-        <Pressable onPress={() => router.push(`/post/${post.id}`)}>
-            <HStack my={2} p={3} rounded={"xl"} justifyContent={"flex-start"}  alignContent={"center"} w={"100%"}
-                borderBottomWidth={1} bg={"white"} borderBottomColor={"tertiary.200:alpha.50"} _dark={{ bg: "dark.50:alpha.50",  borderBottomColor: "black" }}>
-                <Avatar bg="primary.400" source={{ uri: post.user.image }} size={"md"}>
-                    {/* If is friend - show status? Or show country here */}
-                    <Avatar.Badge bg="primary.400"></Avatar.Badge>
+        <Pressable onPress={() => router.push({pathname: `/post/${post.id}`, params: { randomColor: randomColor } })}>
+            <HStack my={2} p={3} rounded={"xl"} bg={randomColor}
+                justifyContent={"flex-start"} alignContent={"center"} w={"100%"}
+                borderWidth={2} borderBottomWidth={4} borderRightWidth={4}>
+                {/* Show online status of friends */}
+                <Avatar size={"md"} borderWidth={2} bg="primary.400" source={{ uri: post.user.image }} >
+                    <Avatar.Badge bg="primary.200" borderColor={"black"}></Avatar.Badge>
                 </Avatar>
                 <VStack ml={2} flex={1} >
                     <HStack>
@@ -28,10 +30,10 @@ const PostView = ({ post }:PostProps ) => {
                     <Text>{post.content}</Text>
                     {/* Image Combonent to handle multiples */}
                     { post.image && (
-                    <View>
-                    <AspectRatio ratio={{ base: 16/9 }} height={{ base: 186, md: 400 }}>
-                        <Image mt={2} borderRadius={"lg"} src={post.image} resizeMode="cover" alt={`image provided with post containing: ${post.content}`} flex={1} />
-                    </AspectRatio></View> )}
+                    <View>                
+                        <Image borderWidth={2} mt={2} borderRadius={"lg"} source={{ uri:post.image }} resizeMode="cover" borderColor={"black"}
+                            alt={`image provided with post containing: ${post.content}`} size={"full"} h={150}  />
+                    </View> )}
                     <HStack mt={2} justifyContent={"space-between"}>
                         <FooterButton icon="comment-outline" text="123" />
                         <FooterButton icon="square-edit-outline" text="3" />

@@ -1,5 +1,5 @@
 import { View, Icon, Stagger, Box, HStack, useDisclose, Pressable, Text } from 'native-base'
-import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons, Entypo } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
 function FabMenu(){
@@ -11,7 +11,7 @@ function FabMenu(){
 	} = useDisclose();
 	
 	return (
-		<View position={"absolute"} bottom={2} right={5}>
+		<View position={"absolute"} bottom={0} right={3}>
 			<Box alignItems="center" minH="220">
 				<Stagger visible={isOpen} 
 					initial={{
@@ -44,28 +44,32 @@ function FabMenu(){
 							}
 						}
 					}}>
-				<Pressable  mb="4" variant="solid" bg="primary.400" colorScheme="primary" borderRadius="full" w={12} h={12} alignItems={"center"} justifyContent={"center"}
-					onPress={()=>{ onClose(); router.push('/two') }}>
-					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}>Test</Text>
-					<Icon as={MaterialIcons} name="location-pin" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
+				<Pressable  mb="4" variant="solid" bg="primary.500" colorScheme="primary" borderRadius="full" w={12} h={12} 
+							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
+							onPress={()=>{ onClose(); router.push('/two') }}>
+					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
+					<Icon as={Entypo} name="new-message" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
-				<Pressable  mb="4" variant="solid" bg="tertiary.400" colorScheme="tertiary" borderRadius="full" w={12} h={12} alignItems={"center"} justifyContent={"center"}
-					onPress={()=>{ onClose(); }}>
-					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}>Test</Text>
+				<Pressable  mb="4" variant="solid" bg="secondary.300" colorScheme="tertiary" borderRadius="full" w={12} h={12} 
+							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
+							onPress={()=>{ onClose(); }}>
+					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
 					<Icon as={MaterialCommunityIcons} name="microphone" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
-				<Pressable  mb="4" variant="solid" bg="warmGray.500" colorScheme="warmGray" borderRadius="full" w={12} h={12} alignItems={"center"} justifyContent={"center"}
-					onPress={()=>{ onClose(); }}>
-						<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}>Test</Text>
+				<Pressable  mb="4" variant="solid" bg="tertiary.300" colorScheme="warmGray" borderRadius="full" w={12} h={12} 
+							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
+							onPress={()=>{ onClose(); }}>
+					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
 					<Icon as={MaterialCommunityIcons} name="video" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
-				<Pressable  mb="4" variant="solid" bg="green.400" colorScheme="green" borderRadius="full" w={12} h={12} alignItems={"center"} justifyContent={"center"}
-					onPress={()=>{ onClose(); }}>
-						<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}>Test</Text>
-					<Icon as={MaterialIcons} name="photo-library" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
+				<Pressable  mb="4" variant="solid" bg="pink.400" colorScheme="green" borderRadius="full" w={12} h={12} 
+							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
+							onPress={()=>{ onClose(); }}>
+					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
+					<Icon as={MaterialIcons} name="photo-library" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
 				</Stagger>
@@ -73,8 +77,9 @@ function FabMenu(){
 			</Box>
 
 			<HStack alignItems="center">
-				<Pressable shadow={"9"} variant="solid" borderRadius="full" onPress={()=> { router.push('/new-post'); onToggle } } bg="primary.600">
-					<Icon as={MaterialCommunityIcons} size="12" name="plus" color="warmGray.50" _dark={{ color: "warmGray.50" }} />
+				<Pressable variant="solid" borderRadius="full" onPress={()=> { onToggle() } } bg="cyan.200" 
+							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6} w={16} h={16}  >
+					<Icon as={MaterialCommunityIcons} size={10} name="plus" color="warmGray.50" _dark={{ color: "warmGray.50" }} />
 				</Pressable>
 			</HStack>
 
