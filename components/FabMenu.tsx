@@ -46,7 +46,7 @@ function FabMenu(){
 					}}>
 				<Pressable  mb="4" variant="solid" bg="primary.500" colorScheme="primary" borderRadius="full" w={12} h={12} 
 							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-							onPress={()=>{ onClose(); router.push('/two') }}>
+							onPress={()=>{ onClose(); router.push('/new-post') }}>
 					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
 					<Icon as={Entypo} name="new-message" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
