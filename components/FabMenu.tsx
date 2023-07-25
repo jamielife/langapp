@@ -9,15 +9,15 @@ function FabMenu(){
 	  onClose,
 	  onToggle
 	} = useDisclose();
-	
+
 	return (
-		<View position={"absolute"} bottom={0} right={3}>
-			<Box alignItems="center" minH="220">
+		<View position={"absolute"} zIndex={0} bottom={0} right={3}>
+			<Box alignItems="center" overflow={"visible"} height={ isOpen ? "auto" : 0 }>
 				<Stagger visible={isOpen} 
 					initial={{
 						opacity: 0,
 						scale: 0,
-						translateY: 34
+						translateY: 34,
 					}} 
 					animate={{
 						translateY: 0,
@@ -47,28 +47,24 @@ function FabMenu(){
 				<Pressable  mb="4" variant="solid" bg="primary.500" colorScheme="primary" borderRadius="full" w={12} h={12} 
 							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
 							onPress={()=>{ onClose(); router.push('/new-post') }}>
-					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
 					<Icon as={Entypo} name="new-message" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
 				<Pressable  mb="4" variant="solid" bg="secondary.300" colorScheme="tertiary" borderRadius="full" w={12} h={12} 
 							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
 							onPress={()=>{ onClose(); }}>
-					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
 					<Icon as={MaterialCommunityIcons} name="microphone" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
 				<Pressable  mb="4" variant="solid" bg="tertiary.300" colorScheme="warmGray" borderRadius="full" w={12} h={12} 
 							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
 							onPress={()=>{ onClose(); }}>
-					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
 					<Icon as={MaterialCommunityIcons} name="video" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
 				<Pressable  mb="4" variant="solid" bg="pink.400" colorScheme="green" borderRadius="full" w={12} h={12} 
 							alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
 							onPress={()=>{ onClose(); }}>
-					<Text color={"white"} fontSize={16} position={"relative"} left={-48} bottom={-5} mb={-5}></Text>
 					<Icon as={MaterialIcons} name="photo-library" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 				</Pressable>
 
@@ -87,4 +83,4 @@ function FabMenu(){
 	);
 };
 
-  export default FabMenu;
+export default FabMenu;

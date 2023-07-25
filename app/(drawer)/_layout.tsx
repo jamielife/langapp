@@ -33,9 +33,9 @@ export default function DrawerLayout() {
     return (
         <NativeBaseProvider theme={theme}>    
             <Drawer drawerContent={(props) => <CustomDrawerContent {...props} />}>
-                <Drawer.Screen name='(tabs)' options={{ headerShown: false, title: 'Feed' }}  />                
-                <Drawer.Screen name='favorites' options={{  title: 'My Favs', headerLeft: () => (<ProfileMenuIcon id={user.id} image={user.image} avaSize="md"  />) }}  />
-                <Drawer.Screen name='go-pro' options={{  title: 'Go Pro!', headerLeft: () => (<ProfileMenuIcon id={user.id} image={user.image} avaSize="md" />) }}  />
+                <Drawer.Screen name='(tabs)'   options={{ headerShown: false, title: 'Feed' }}  />                
+                <Drawer.Screen name='notebook' options={{  title: 'Notebook', headerLeft: () => (<ProfileMenuIcon id={user.id} image={user.image} avaSize="md"  />) }}  />
+                <Drawer.Screen name='go-pro'   options={{  title: 'Go Pro!',  headerLeft: () => (<ProfileMenuIcon id={user.id} image={user.image} avaSize="md" />) }}  />
             </Drawer>
         </NativeBaseProvider>
     )

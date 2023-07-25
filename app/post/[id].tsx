@@ -1,7 +1,7 @@
 import PostView from "../../components/PostView";
 import tweets from "../../assets/data/tweets";
-import { useSearchParams, useNavigation, useRouter, useLocalSearchParams } from "expo-router";
-import { Text, View } from "native-base";
+import { useNavigation, useRouter, useLocalSearchParams } from "expo-router";
+import { Pressable, Text, View } from "native-base";
 
 export default function PostScreen() {
     //const { id } = useSearchParams();
@@ -20,7 +20,9 @@ export default function PostScreen() {
 
     return(
         <View p={3} flex={1} bg={"rgba(255,255,255,.90)"} _dark={{ bg: "rgba(0,0,0,.93)" }}>
-            <PostView post={post} randomColor={randomColor} />
+            <Pressable onPress={()=> router.back() } flex={1}>
+                <PostView post={post} randomColor={randomColor} />
+            </Pressable>
         </View>
     )
 }
