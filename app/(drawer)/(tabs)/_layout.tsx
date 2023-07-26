@@ -1,7 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import {Pressable, useTheme, View } from 'native-base';
-import ProfileMenuIcon from '../../../components/ProfileMenuIcon';
+import ProfileMenuIcon from '../../../components/ProfileMenuAvatar';
 import { position } from 'native-base/lib/typescript/theme/styled-system';
 
 function TabBarIcon(props: {

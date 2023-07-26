@@ -54,10 +54,10 @@ function RootLayoutNav() {
             <Stack.Screen name="new-post"  options={{ title: "New Post!",  presentation: 'transparentModal', 
               headerLeft:() => ( 							
                 <Pressable onPress={ ()=>{ router.back() } }>
-                  <Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "warmGray.50" }} color="primary.700" />
+                  <Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "cyan.500" }} color="cyan.500" />
                 </Pressable>
               ),
-              headerRight:() => ( <Button mr={3}>Post</Button> ) }} />
+              headerRight:() => ( <Button bg={"cyan.300"} zIndex={20} borderWidth={2} borderBottomWidth={4} w={20} h={12} borderRadius={"full"} mr={3}>Post</Button> ) }} />
           </Stack>
         </ThemeProvider>
       </NativeBaseProvider>

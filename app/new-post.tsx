@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { View, Avatar, HStack, TextArea, Button, Text, KeyboardAvoidingView, Pressable, Icon } from "native-base"
 import { useRouter, useNavigation } from 'expo-router';
 import { Platform } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 
 const user = {
     id: 'ul000001',
@@ -20,7 +20,7 @@ export default function NewPost(){
     useEffect(() => {
         navigation.setOptions({
             headerRight: () => (
-                <Button zIndex={20} borderWidth={2} borderBottomWidth={4} w={20} h={12} borderRadius={"full"} onPress={submitPost} mr={3}>Post</Button>
+                <Button bg={"cyan.300"} colorScheme={"cyan"} zIndex={20} borderWidth={2} borderBottomWidth={4} w={20} h={12} borderRadius={"full"} onPress={submitPost} mr={3}>Post</Button>
             ),
         });
       }, [navigation, postContent]);    
@@ -37,6 +37,14 @@ export default function NewPost(){
         <KeyboardAvoidingView flex={1} 
             keyboardVerticalOffset={165} behavior={Platform.OS === "ios" ? "padding" : "height"} 
             bg={"rgba(255,255,255,.97)"} _dark={{ bg: "rgba(0,0,0,.93)" }}>
+
+
+
+
+
+
+
+
             <View p={3} flex={1}>
                 <HStack flex={1}>
                     <Avatar bg="primary.400" source={{ uri: user.image }} borderWidth={2} size={"md"}>
@@ -46,22 +54,26 @@ export default function NewPost(){
                     autoCompleteType={null} variant="unstyled" autoFocus value={postContent} onChangeText={(newValue) => setPostContent(newValue)}  />
                 </HStack>
                 <HStack height={12} alignSelf={"flex-end"}>
+                    <Pressable mb="4" ml="2" variant="solid" bg="cyan.300" colorScheme="primary" borderRadius="full" w={12} h={12} 
+                        alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6} >
+                        <Icon as={MaterialIcons} name="translate" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
+                    </Pressable>
                     <Pressable mb="4" ml="2" variant="solid" bg="primary.500" colorScheme="primary" borderRadius="full" w={12} h={12} 
                         alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6} >
-                        <Icon as={MaterialCommunityIcons} name="note-plus" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />                            
+                        <Icon as={MaterialCommunityIcons} name="draw" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
                     </Pressable>       
                     <Pressable mb="4" ml="2" variant="solid" bg="secondary.300" colorScheme="secondary" borderRadius="full" w={12} h={12} 
                         alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6} >
-                        <Icon as={MaterialCommunityIcons} name="note-plus" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />                            
+                        <Icon as={MaterialCommunityIcons} name="microphone" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
                     </Pressable>         
                     <Pressable mb="4" ml="2" variant="solid" bg="tertiary.300" colorScheme="tertiary" borderRadius="full" w={12} h={12} 
                         alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6} >
-                        <Icon as={MaterialCommunityIcons} name="note-plus" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />                            
-                    </Pressable>         
+                        <Icon as={MaterialCommunityIcons} name="video" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" /> 
+                    </Pressable>
                     <Pressable mb="4" ml="2" variant="solid" bg="pink.300" colorScheme="pink" borderRadius="full" w={12} h={12} 
                         alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6} >
-                        <Icon as={MaterialCommunityIcons} name="note-plus" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />                            
-                    </Pressable>                                                                                 
+                        <Icon as={MaterialIcons} name="photo-library" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" /> 
+                    </Pressable>
                 </HStack>
             </View>
         </KeyboardAvoidingView> 

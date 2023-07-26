@@ -2,7 +2,7 @@ import { withLayoutContext } from "expo-router";
 import { DrawerContentScrollView, DrawerItemList, createDrawerNavigator } from "@react-navigation/drawer";
 import { HStack, NativeBaseProvider, Text } from 'native-base';
 import { theme } from "../../constants/Theme";
-import ProfileMenuIcon from "../../components/ProfileMenuIcon";
+import ProfileMenuIcon from "../../components/ProfileMenuAvatar";
 
 const DrawerNavigator = createDrawerNavigator().Navigator;
 const Drawer = withLayoutContext(DrawerNavigator);

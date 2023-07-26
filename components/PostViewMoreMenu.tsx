@@ -38,7 +38,7 @@ function PostViewMoreMenu({ post }:PostProps){
                             <Button mr={"auto"} variant="unstyled" colorScheme="coolGray" onPress={() => { onAlertClose(); setShowModal(false);}} ref={cancelRef}>
                                 Nevermind
                             </Button>
-                            <Button px={6} bg={"pink.300"} onPress={() => { onAlertClose(); setShowModal(false); console.warn(`Post ID: ${post.id} Reported!`)  }} 
+                            <Button px={6} bg={"pink.300"} onPress={() => { onAlertClose(); setShowModal(false); console.warn(`${post.id} - Post Reported! Thank you for letting us know!`)  }} 
                                 borderWidth={1} borderBottomWidth={3} colorScheme={"pink"}>
                                 Report
                             </Button>

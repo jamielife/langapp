@@ -8,7 +8,7 @@ export type AvatarProps = {
     avaSize: string;
 }
 
-const ProfileMenuIcon = ({ id, image, avaSize }:AvatarProps ) => {
+const ProfileMenuAvatar = ({ id, image, avaSize }:AvatarProps ) => {
 	const navigation = useNavigation();
     return(
         <Pressable ml={3} key={id} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer()) } >
@@ -19,4 +19,4 @@ const ProfileMenuIcon = ({ id, image, avaSize }:AvatarProps ) => {
     )
 }
 
-export default ProfileMenuIcon;
+export default ProfileMenuAvatar;

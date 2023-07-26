@@ -16,6 +16,7 @@ const tweets = [
     numberOfRetweets: 11,
     numberOfLikes: 10,
     impressions: 0,
+    isVIP: true,
   },
   {
     id: 't0',
@@ -34,6 +35,8 @@ const tweets = [
     numberOfRetweets: 11,
     numberOfLikes: 10,
     impressions: 0,
+    isVIP: true,
+    isFriend: true,
   },
   {
     id: '111111111',
@@ -51,6 +54,7 @@ const tweets = [
     numberOfRetweets: 5,
     numberOfLikes: 25,
     impressions: 500,
+
   },
   {
     id: '222222222',
@@ -68,6 +72,7 @@ const tweets = [
     numberOfRetweets: 20,
     numberOfLikes: 100,
     impressions: 1000,
+    isVIP: true,
   },
   {
     id: '333333333',
@@ -85,6 +90,8 @@ const tweets = [
     numberOfRetweets: 10,
     numberOfLikes: 50,
     impressions: 1000,
+    isVIP: true,
+    isFriend: true,
   },
   {
     id: 't1',
@@ -151,6 +158,7 @@ const tweets = [
     numberOfComments: 4,
     numberOfRetweets: 11,
     numberOfLikes: 99,
+    isVIP: true,    
   },
   {
     id: '4t6',

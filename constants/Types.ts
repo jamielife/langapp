@@ -14,6 +14,8 @@ export type PostType = {
     numberOfComments?: number;
     numberOfRetweets?: number;
     numberOfLikes?: number;
-    impressions?: number;    
+    impressions?: number;
+    isVIP?: boolean;
+    isFriend?: boolean; //temporary
 }
 
