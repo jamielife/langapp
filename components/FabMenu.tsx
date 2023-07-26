@@ -93,25 +93,25 @@ function FabMenu(){
 							}}>
 							<Pressable mb="3" variant="solid" bg="primary.500" colorScheme="primary" borderRadius="full" w={12} h={12} 
 								alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-								onPress={()=>{ onClose(); router.push('/new-post') }}>
+								onPress={()=>{ onClose(); router.push('/new-post'); setShowModal(false); handlePress(turnedOn) }}>
 								<Icon as={Entypo} name="new-message" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 							</Pressable>
 
 							<Pressable mb="3" variant="solid" bg="secondary.300" colorScheme="tertiary" borderRadius="full" w={12} h={12} 
 								alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-								onPress={()=>{ onClose(); }}>
+								onPress={()=>{ onClose(); setShowModal(false); handlePress(turnedOn) }}>
 								<Icon as={MaterialCommunityIcons} name="microphone" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 							</Pressable>
 
 							<Pressable mb="3" variant="solid" bg="tertiary.300" colorScheme="warmGray" borderRadius="full" w={12} h={12} 
 								alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-								onPress={()=>{ onClose(); }}>
+								onPress={()=>{ onClose(); setShowModal(false); handlePress(turnedOn) }}>
 								<Icon as={MaterialCommunityIcons} name="video" size={8} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 							</Pressable>
 
 							<Pressable mb="3" variant="solid" bg="pink.400" colorScheme="green" borderRadius="full" w={12} h={12} 
 								alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-								onPress={()=>{ onClose(); }}>
+								onPress={()=>{ onClose(); setShowModal(false); handlePress(turnedOn) }}>
 								<Icon as={MaterialIcons} name="photo-library" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
 							</Pressable>
 

@@ -27,7 +27,6 @@ export const SpinButton = () => {
   
 	const handlePress = (value:boolean) => {
 		turnedOn = !turnedOn;
-		console.log(value)
 		rotation.value = withTiming(value ? 225 : 0, {
 		  duration: 1000,
 		  easing: Easing.bounce,

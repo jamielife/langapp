@@ -29,16 +29,16 @@ function PostViewMoreMenu({ post }:PostProps){
 
             {/* Report confirmation prompt */}
             <Center>
-                <AlertDialog leastDestructiveRef={cancelRef} isOpen={isAlertOpen} onClose={onAlertClose}>
+                <AlertDialog leastDestructiveRef={cancelRef} isOpen={isAlertOpen} onClose={onAlertClose} bg={"pink.400:alpha.25"}>
                     <AlertDialog.Content borderWidth={2} borderBottomWidth={6} borderRadius={"xl"}>
                     <AlertDialog.Body borderRadius={"xl"}>
                         <Text mb={4} bold>Report Comment?</Text>
                         Please report this comment if it violates any of our policies.
                         <HStack mt={4}>
-                            <Button mr={"auto"} variant="unstyled" colorScheme="coolGray" onPress={onAlertClose} ref={cancelRef}>
+                            <Button mr={"auto"} variant="unstyled" colorScheme="coolGray" onPress={() => { onAlertClose(); setShowModal(false);}} ref={cancelRef}>
                                 Nevermind
                             </Button>
-                            <Button px={6} bg={"pink.300"} onPress={() => { onAlertClose(); console.warn(`Post ID: ${post.id} Reported!`)  }} 
+                            <Button px={6} bg={"pink.300"} onPress={() => { onAlertClose(); setShowModal(false); console.warn(`Post ID: ${post.id} Reported!`)  }} 
                                 borderWidth={1} borderBottomWidth={3} colorScheme={"pink"}>
                                 Report
                             </Button>
@@ -51,13 +51,13 @@ function PostViewMoreMenu({ post }:PostProps){
             {/* Elipsis Button */}
             <HStack justifyContent={"flex-end"}>
 				<Pressable variant="solid" borderRadius="full" 
-                    onPress={()=> { onToggle(); setShowModal(true) }} bg="white:alpha.50" alignItems={"center"} justifyContent={"center"} borderWidth={1} w={6} h={6}>
+                    onPress={()=> { onToggle(); setShowModal(true); }} bg="white:alpha.50" alignItems={"center"} justifyContent={"center"} borderWidth={1} w={6} h={6}>
 					<Icon as={Entypo} size={4} name="dots-three-horizontal" color="warmGray.500" _dark={{ color: "warmGray.50" }} />
 				</Pressable>
 			</HStack>
             
             {/* Modal, animated icons open/close func */}
-            <Modal isOpen={showModal} onClose={() =>{ onToggle(); setShowModal(false) }} bg={"white:alpha.75"} borderWidth={0}>
+            <Modal isOpen={showModal} onClose={() =>{ onToggle(); setShowModal(false); }} bg={"white:alpha.75"} borderWidth={0}>
                 <Modal.Content bg={"none"} height={24} justifyContent={"center"} shadow={"none"}>
 
                     <Box alignItems="center" overflow={"visible"} height={ isOpen ? "auto" : 0 } w={ isOpen ? "auto" : 0 } opacity={isOpen ? 1 : 0}>				            
@@ -100,7 +100,7 @@ function PostViewMoreMenu({ post }:PostProps){
                                 <Box ml={2} alignItems={"center"}>
                                     <Pressable mb="4" variant="solid" bg="primary.500" colorScheme="primary" borderRadius="full" w={12} h={12} 
                                                 alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-                                                onPress={()=>{ onClose(); router.push('/new-post') }}>                            
+                                                onPress={()=>{ onClose(); setShowModal(false); router.push('/new-post') }}>                            
                                         <Icon as={MaterialIcons} name="translate" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
                                     </Pressable>
                                     <Center mt={-3} px={2} bg={"primary.500"} borderWidth={1} borderRadius={"full"} borderBottomWidth={3}>
@@ -111,7 +111,7 @@ function PostViewMoreMenu({ post }:PostProps){
                                 <Box ml={2} alignItems={"center"}>
                                     <Pressable mb="4" variant="solid" bg="secondary.300" colorScheme="tertiary" borderRadius="full" w={12} h={12} 
                                                 alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-                                                onPress={()=>{ onClose(); console.warn(`Post ID: ${post.id} added to Notebook!`) }}>
+                                                onPress={()=>{ onClose(); setShowModal(false); console.warn(`Post ID: ${post.id} added to Notebook!`) }}>
                                         <Icon as={MaterialCommunityIcons} name="note-plus" size={7} _dark={{ color: "warmGray.50" }} color="warmGray.50" />                            
                                     </Pressable>
                                     <Center mt={-3} px={2} bg={"secondary.300"} borderWidth={1} borderRadius={"full"} borderBottomWidth={3}>
@@ -122,7 +122,7 @@ function PostViewMoreMenu({ post }:PostProps){
                                 <Box ml={2} alignItems={"center"}>
                                     <Pressable mb="4" variant="solid" bg="tertiary.300" colorScheme="warmGray" borderRadius="full" w={12} h={12} 
                                                 alignItems={"center"} justifyContent={"center"} borderWidth={2} borderBottomWidth={6}
-                                                onPress={()=>{ onClose(); }}>
+                                                onPress={()=>{ onClose(); setShowModal(false); }}>
                                         <Icon as={MaterialIcons} name="file-copy" size={6} _dark={{ color: "warmGray.50" }} color="warmGray.50" />
                                     </Pressable>
                                     <Center mt={-3} px={2} bg={"tertiary.300"} borderWidth={1} borderRadius={"full"} borderBottomWidth={3}>
