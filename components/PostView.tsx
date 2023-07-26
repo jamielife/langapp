@@ -1,19 +1,17 @@
-import { View, Text, Image, HStack, VStack, Avatar, Pressable, Modal, Center } from 'native-base'
+import { View, Text, Image, HStack, VStack, Avatar, Pressable, Modal, Center, Button } from 'native-base'
 import { PostType } from '../constants/Types';
 import FooterButton from './PostFooter';
 import { useRouter } from 'expo-router';
 import PostViewMoreMenu from './PostViewMoreMenu';
-import { useState } from 'react';
 
 export type PostProps = {
     post: PostType;
-    randomColor: any; 
+    randomColor: any;
 }
 
 const PostView = ({ post, randomColor }:PostProps ) => {
-    const router = useRouter();
-
-	return (
+    const router = useRouter();        
+	return (    
         <Pressable onPress={() => router.push({pathname: `/post/${post.id}`, params: { randomColor: randomColor } })}>            
             <HStack my={2} p={3} rounded={"xl"} bg={randomColor}
                 justifyContent={"flex-start"} alignContent={"center"} w={"100%"}
@@ -44,9 +42,8 @@ const PostView = ({ post, randomColor }:PostProps ) => {
                     </HStack>
                 </VStack>
             </HStack>
-            <PostViewMoreMenu post={post} />
-        </Pressable>
+            <PostViewMoreMenu post={post} />   
+        </Pressable>        
 	);
 }
- 
 export default PostView;
