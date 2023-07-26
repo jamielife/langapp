@@ -21,13 +21,13 @@ const tweets = [
     id: 't0',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'aHugsAlots44',
+      name: 'Amanda',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://loremflickr.com/cache/resized/65535_51147151025_0054d310c3_c_640_480_nofilter.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
-    content: 'Can you please check if the Subscribe button on Youtube works?',
+    content: 'Lorem ipsum sick color scheme bro!',
     image:
       'https://images.unsplash.com/photo-1492012327145-ae49592e5f6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
     numberOfComments: 123,
@@ -41,9 +41,9 @@ const tweets = [
     user: {
       id: '123456789',
       name: 'Geoffrey',
-      username: 'getOffme',
+      username: 'jfitzgerald1889',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg',
+        'https://loremflickr.com/cache/resized/65535_52304379264_8d01ec90cf_b_640_480_nofilter.jpg',
     },
     content:
       'Just had a great workout at the gym! 💪 #fitness #healthylifestyle',
@@ -60,7 +60,7 @@ const tweets = [
       name: 'Jim Beam',
       username: 'jbeammy',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg',
+        'https://loremflickr.com/cache/resized/65535_52490818565_b618572970_z_640_480_nofilter.jpg',
     },
     content: 'Had an amazing surf session this morning',
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/8.jpg',
@@ -90,10 +90,10 @@ const tweets = [
     id: 't1',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'gomeMan2022',
+      name: 'Bradley',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://loremflickr.com/cache/resized/14_19241377_1ea854fa41_z_640_480_nofilter.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
@@ -108,29 +108,14 @@ const tweets = [
     id: 't2',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'gomeMan2022',
+      name: 'Bradley',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://loremflickr.com/cache/resized/14_19241377_1ea854fa41_z_640_480_nofilter.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
       "Hey Hey Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    numberOfComments: 4,
-    numberOfRetweets: 11,
-    numberOfLikes: 99,
-  },
-  {
-    id: 't3',
-    user: {
-      id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
-      image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
-    },
-    createdAt: '2020-08-27T12:00:00.000Z',
-    content: 'Hello World',
     numberOfComments: 4,
     numberOfRetweets: 11,
     numberOfLikes: 99,
@@ -139,10 +124,26 @@ const tweets = [
     id: 't4',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'gomeMan2022',
+      name: 'Bradley',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://loremflickr.com/cache/resized/14_19241377_1ea854fa41_z_640_480_nofilter.jpg',
+    },
+    createdAt: '2020-08-27T12:00:00.000Z',
+    content:
+      "Turpis massa tincidunt dui ut ornare lectus sit amet est. Velit laoreet id donec ultrices tincidunt arcu non.",
+    numberOfComments: 4,
+    numberOfRetweets: 11,
+    numberOfLikes: 99,
+  },
+  {
+    id: '4t5',
+    user: {
+      id: 'u1',
+      username: 'OverlyProfessional',
+      name: 'T. Fischer',
+      image:
+        'https://loremflickr.com/cache/resized/65535_52881085363_b0fd697e32_c_640_480_nofilter.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
@@ -151,6 +152,23 @@ const tweets = [
     numberOfRetweets: 11,
     numberOfLikes: 99,
   },
+  {
+    id: '4t6',
+    user: {
+      id: 'u1',
+      username: 'maddisonWanderer',
+      name: 'Maddy T.',
+      image:
+        'https://loremflickr.com/cache/resized/65535_52525758382_b705c16669_c_640_480_nofilter.jpg',
+    },
+    createdAt: '2020-08-27T12:00:00.000Z',
+    content:
+      "Vacation, all I ever wanted.",
+    numberOfComments: 4,
+    numberOfRetweets: 11,
+    numberOfLikes: 99,
+  },
+    
 ];
 
 export default tweets;
