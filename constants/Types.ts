@@ -2,7 +2,9 @@ export type User = {
     id: string;
     username: string;
     name: string;
-    image?: string;    
+    image?: string;        
+    isVIP?: boolean;
+    isFriend?: boolean; //temporary
 }
 
 export type PostType = {
@@ -15,7 +17,14 @@ export type PostType = {
     numberOfRetweets?: number;
     numberOfLikes?: number;
     impressions?: number;
-    isVIP?: boolean;
-    isFriend?: boolean; //temporary
 }
+
+export type CommentType = {
+    id: string;
+    user: User;
+    createdAt: string;
+    content: string;
+    //image?: string;
+}
+
 

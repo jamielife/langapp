@@ -3,7 +3,7 @@ import { PostType } from '../constants/Types';
 import { useRouter } from 'expo-router';
 import PostViewMoreMenu from './PostViewMoreMenu';
 import PostFooter from './PostFooter';
-import { FontAwesome5, Octicons } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
 
 export type PostProps = {
     post: PostType;
@@ -11,9 +11,10 @@ export type PostProps = {
 }
 
 const PostView = ({ post, randomColor }:PostProps ) => {
-    const router = useRouter();        
+    const router = useRouter();
+
 	return (    
-        <Pressable onPress={() => router.push({pathname: `/post/${post.id}`, params: { randomColor: randomColor } })}>            
+        <Pressable onPress={() => router.push({pathname: `/post/${post.id}`, params: { randomColor: randomColor } })} zIndex={1}>
             <HStack my={2} p={3} rounded={"xl"} bg={randomColor}
                 justifyContent={"flex-start"} alignContent={"center"} w={"100%"}
                 borderWidth={2} borderBottomWidth={4} borderRightWidth={4}>
@@ -25,7 +26,7 @@ const PostView = ({ post, randomColor }:PostProps ) => {
                 </VStack>
                 <VStack ml={2} flex={1} >
                     <HStack>
-                        { post.isVIP && ( <Text ml={0} mt={0} mr={1}><Octicons name="verified" size={16} color="rgba(0,0,0,.55)" /></Text> )}
+                        { post.user.isVIP && ( <Text ml={0} mt={0} mr={1}><Octicons name="verified" size={16} color="rgba(0,0,0,.55)" /></Text> )}
                          <Text bold>{post.user.name}</Text>
                         <Text ml={1}>@{post.user.username} · 2h</Text>
                     </HStack>                   

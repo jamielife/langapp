@@ -2,6 +2,8 @@ import { Link, Stack } from 'expo-router';
 import { StyleSheet } from 'react-native';
 import { NativeBaseProvider, View, Text } from 'native-base';
 
+//review - https://docs.expo.dev/routing/error-handling/#unmatched-routes
+
 export default function NotFoundScreen() {
   return (
     <NativeBaseProvider>

@@ -2,6 +2,7 @@ const tweets = [
   {
     id: 'jl001',
     user: {
+      isVIP: true,
       id: 'ul000001',
       username: 'jamielife',
       name: 'Jamie Taylor',
@@ -16,11 +17,12 @@ const tweets = [
     numberOfRetweets: 11,
     numberOfLikes: 10,
     impressions: 0,
-    isVIP: true,
   },
   {
     id: 't0',
     user: {
+      isFriend: true,
+      isVIP: true,
       id: 'u1',
       username: 'aHugsAlots44',
       name: 'Amanda',
@@ -35,8 +37,8 @@ const tweets = [
     numberOfRetweets: 11,
     numberOfLikes: 10,
     impressions: 0,
-    isVIP: true,
-    isFriend: true,
+    
+
   },
   {
     id: '111111111',
@@ -60,6 +62,7 @@ const tweets = [
     id: '222222222',
     createdAt: '2023-04-27T19:45:00.000Z',
     user: {
+      isVIP: true,
       id: '987654321',
       name: 'Jim Beam',
       username: 'jbeammy',
@@ -72,12 +75,14 @@ const tweets = [
     numberOfRetweets: 20,
     numberOfLikes: 100,
     impressions: 1000,
-    isVIP: true,
+    
   },
   {
     id: '333333333',
     createdAt: '2023-04-26T12:00:00.000Z',
-    user: {
+    user: {    
+      isVIP: true,
+      isFriend: true,
       id: '123456789',
       name: 'Jane Smith',
       username: 'janesmith',
@@ -90,8 +95,7 @@ const tweets = [
     numberOfRetweets: 10,
     numberOfLikes: 50,
     impressions: 1000,
-    isVIP: true,
-    isFriend: true,
+
   },
   {
     id: 't1',
@@ -146,6 +150,7 @@ const tweets = [
   {
     id: '4t5',
     user: {
+      isVIP: true,    
       id: 'u1',
       username: 'OverlyProfessional',
       name: 'T. Fischer',
@@ -158,14 +163,14 @@ const tweets = [
     numberOfComments: 4,
     numberOfRetweets: 11,
     numberOfLikes: 99,
-    isVIP: true,    
+   
   },
   {
     id: '4t6',
     user: {
       id: 'u1',
       username: 'maddisonWanderer',
-      name: 'Maddy T.',
+      name: 'Madison Jeffersonson',
       image:
         'https://loremflickr.com/cache/resized/65535_52525758382_b705c16669_c_640_480_nofilter.jpg',
     },
