@@ -26,8 +26,8 @@ export default function PostScreen() {
         Set loading to true then 
         Get comments by Post ID
     */
-    const [post, setPosts] = useState<PostType[]>([]);
-    const [comments, setComments] = useState<CommentType[]>([]); //<Array<Object>>([]); ??
+    const [post, setPosts] = useState<PostType>();
+    const [comments, setComments] = useState<Array<CommentType>>(); //<Array<Object>>([]); ??
     const [loading, setLoading] = useState<boolean>(true);
 
         //setTimeout(() => {
@@ -118,10 +118,10 @@ export default function PostScreen() {
                 </>
             :
                 <>
-                    <PostView post={post} randomColor={randomColor} /> 
+                    { post && <PostView post={post} randomColor={randomColor} /> }
                     <View mt={-3} alignItems={"center"} alignSelf={"center"} overflow={"hidden"} mb={10}
                         borderWidth={2} w={"92%"} borderBottomRadius={"xl"} borderBottomWidth={4} >
-                        {comments.map((comment, index) => (  
+                        {comments && comments.map((comment, index) => (  
                             <CommentsView key={comment.id} comment={comment} bgColor={randomColor} />
                         ))}
                         {/* <FlatList data={comments} renderItem={({item}) => <CommentsView comment={item} bgColor={randomColor} />} /> */}
