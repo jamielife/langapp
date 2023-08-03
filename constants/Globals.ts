@@ -1,2 +1,2 @@
-export const API_URL = 'http://localhost:3500/posts';
-export const API_COMMENTS_URL = 'http://localhost:3500/comments';
+export const API_URL = 'https://my-json-server.typicode.com/jamielife/mockjson/posts';
+export const API_COMMENTS_URL = 'https://my-json-server.typicode.com/jamielife/mockjson/comments';

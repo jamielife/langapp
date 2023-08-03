@@ -71,8 +71,6 @@ export default function PostScreen() {
         <ScrollView p={3} flex={1} bg={"rgba(255,255,255,.90)"} _dark={{ bg: "rgba(0,0,0,.93)" }}>
             { loading ? 
                 <>
-                    {/* <PostView post={post} randomColor={randomColor} /> */}
-                    { console.log(post) }
                     <HStack p={3} justifyContent={"flex-start"} alignContent={"center"} flex={1} borderBottomWidth={1} 
                         _dark={{ borderColor: "coolGray.500" }} _light={{ borderColor: "coolGray.200" }}>
                         <Skeleton startColor="coolGray.400" h="5" size={12} rounded="full" />
