@@ -11,8 +11,7 @@ export type PostProps = {
 }
 
 const PostView = ({ post, randomColor }:PostProps ) => {
-    const router = useRouter();
-    
+    const router = useRouter();    
 	return (    
         <Pressable onPress={() => router.push({pathname: `/post/${post.id}`, params: { randomColor: randomColor } })} zIndex={1}>
             <HStack my={2} p={3} rounded={"xl"} bg={randomColor}

@@ -42,11 +42,12 @@ export default function PostScreen() {
 				const response = await fetch(API_URL);
 				const json = await response.json();
                 //TEMP - search from data for ID, this will become ID based query
-				const post = json.find((p: { id: string | string[] | undefined; }) => p.id === id);
+				const post = await json.find((p: { id: string | string[] | undefined; }) => p.id === id);
                 //If nothing, return
                 if(!post) return <Text>Post {id} not found.</Text>
                 //otherwise update post state
                 setPosts(post);
+                fetchComments();
 			} catch(err:any) {
 				console.log(`Error getting post by ID: ${err.stack}`);
 			}
@@ -64,7 +65,6 @@ export default function PostScreen() {
 		}
         //Execute functions
 		fetchPost();
-        fetchComments();
 	}, []);	    
 
     return(
@@ -118,15 +118,19 @@ export default function PostScreen() {
                 </>
             :
                 <>
-                    { post && <PostView post={post} randomColor={randomColor} /> }
-                    <View mt={-3} alignItems={"center"} alignSelf={"center"} overflow={"hidden"} mb={10}
-                        borderWidth={2} w={"92%"} borderBottomRadius={"xl"} borderBottomWidth={4} >
-                        {comments && comments.map((comment, index) => (  
-                            <CommentsView key={comment.id} comment={comment} bgColor={randomColor} />
-                        ))}
-                        {/* <FlatList data={comments} renderItem={({item}) => <CommentsView comment={item} bgColor={randomColor} />} /> */}
-                        
-                    </View>
+                    { post && comments &&
+                        <>
+                            <PostView post={post} randomColor={randomColor} /> 
+                            <View mt={-3} alignItems={"center"} alignSelf={"center"} overflow={"hidden"} mb={10}
+                                borderWidth={2} w={"92%"} borderBottomRadius={"xl"} borderBottomWidth={4} >
+                            
+                                {comments.map((comment, index) => (  
+                                    <CommentsView key={comment.id} comment={comment} bgColor={randomColor} />
+                                ))}
+                                {/* <FlatList data={comments} renderItem={({item}) => <CommentsView comment={item} bgColor={randomColor} />} /> */}
+                            </View>
+                        </>
+                    }
                 </>
             }
         </ScrollView>

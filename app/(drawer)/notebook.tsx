@@ -1,6 +1,7 @@
 import { View, FlatList, useColorModeValue, Center, Text } from 'native-base';
 import { arrayOfColors, arrayOfDarkColors } from '../../constants/Theme';
 import NotebookNotes from '../../components/NotebookNote';
+import { ActivityIndicator } from 'react-native';
 import { API_URL } from '../../constants/Globals';
 import { PostType } from '../../constants/Types';
 import { useEffect, useState } from 'react';
@@ -31,7 +32,7 @@ const Notebook = () => {
 	return (
 		<View p={3} flex={1} style={{ justifyContent: "center", alignContent: "center" }}>
 			{ loading ? 
-				<Text>Loading... </Text>
+				<ActivityIndicator size="large" color="#00ff00" style={{ alignSelf: "center" }} />
             : 
 				<>
 					<Center><Text bold>Your highlighted posts will appear here!</Text></Center>

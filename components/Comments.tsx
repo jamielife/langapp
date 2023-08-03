@@ -38,7 +38,7 @@ const CommentsView = ({ comment, bgColor }: CommentProps ) => {
 	return (             
             <HStack p={3} bg={colorShade(hexColortoChange, 25)}  // needs darkmode conditional value
                 justifyContent={"flex-start"} alignContent={"center"} flex={1}
-                 borderBottomWidth={1}>
+                 borderBottomWidth={1} w={"100%"}>
                 {/* Show online status of friends */}
                 <VStack>
                     <Pressable onPress={() => router.push({pathname: `/${comment.user.username}`, params: { } })}>

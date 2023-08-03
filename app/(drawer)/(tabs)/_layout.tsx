@@ -1,8 +1,8 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import {Pressable, useTheme, View } from 'native-base';
+import { Pressable, useTheme, View, useColorModeValue, useColorMode } from 'native-base';
 import ProfileMenuIcon from '../../../components/ProfileMenuAvatar';
-import { position } from 'native-base/lib/typescript/theme/styled-system';
+import { theme } from '../../../constants/Theme';
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -21,6 +21,14 @@ const user = {
 
 export default function TabLayout() {
 	const { colors } = useTheme();	
+	const iconColor = useColorModeValue("black", "white");
+	const iconBgColor = useColorModeValue(colors["cyan"][200], colors["cyan"][700]);
+	const { toggleColorMode } = useColorMode();
+
+	function switchColorMode(){
+		toggleColorMode();
+		theme.config.initialColorMode = "light"
+	}
 
 	return (
 			<Tabs
@@ -38,44 +46,31 @@ export default function TabLayout() {
 					},					
 				}}>
 				<Tabs.Screen
-				name="index"
-				options={{
-					title: 'LangAppTBD',
-					tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
-					headerRight: () => (
-						<Link href="/modal" asChild>
-							<Pressable>
-								{({ isPressed }) => (
-									<View mr={15} h={25} w={50} p={0} overflow={"hidden"} bg={colors["cyan"][200]} borderWidth={2} borderRadius={25} 
-										alignContent={"center"} justifyContent={"center"} alignItems={"center"} justifyItems={"center"} >
-										<FontAwesome
-										name="info"
-										size={15}
-										color={"white"}
-										style={{ padding: 0, margin: 0, opacity: isPressed ? 0.5 : 1 }}
-									/>
-								</View>
-								)}
-							</Pressable>
-						</Link>
-					),
-					headerLeft: () => (
-						<ProfileMenuIcon id={user.id} image={user.image} avaSize='sm'  />
-					)
-				}}
-				/>
-				<Tabs.Screen name="two" options={{
-											title: 'Notifications',
-											tabBarIcon: ({ color }) => <TabBarIcon name="bell-o" color={color} />,
-										}} />
-				<Tabs.Screen name="messages" options={{
-												title: 'Messages',
-												tabBarIcon: ({ color }) => 
+					name="index"
+					options={{
+						title: 'LangAppTBD',
+						tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
+						headerRight: () => (
+							// <Link href="/settings" asChild>
+								<Pressable onPress={switchColorMode}>
+									{({ isPressed }) => (
+										<View mr={15} h={25} w={50} p={0} overflow={"hidden"} bg={iconBgColor} borderWidth={2} borderRadius={25} borderColor={iconColor}
+											alignContent={"center"} justifyContent={"center"} alignItems={"center"} justifyItems={"center"} >
+											<FontAwesome name="info" size={15} color={iconColor} style={{ padding: 0, margin: 0, opacity: isPressed ? 0.5 : 1 }} />
+										</View>
+									)}
+								</Pressable>
+							// </Link>
+						),
+						headerLeft: () => (
+							<ProfileMenuIcon id={user.id} image={user.image} avaSize='sm'  />
+						)}} />
+					
+					<Tabs.Screen name="two" options={{ title: 'Notifications', tabBarIcon: ({ color }) => <TabBarIcon name="bell-o" color={color} /> }} />
+					<Tabs.Screen name="messages" options={{	title: 'Messages', tabBarIcon: ({ color }) => 
 													// <View w={30} h={30} borderRadius={"full"} bg={colors["cyan"][200]} borderWidth={2}
 													// alignContent={"center"} justifyContent={"center"} alignItems={"center"} justifyItems={"center"} >
-														<TabBarIcon name="comment-o" color={color} />
-													// </View>
-													,
+														<TabBarIcon name="comment-o" color={color} /> // </View>
 											 }} />										
 			</Tabs>
 	);

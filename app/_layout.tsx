@@ -43,25 +43,25 @@ function RootLayoutNav() {
 	const router = useRouter();
 
 	return (
-	<>
-		<StatusBar animated barStyle={theme.config.initialColorMode === 'dark' ? "light-content" : "dark-content"}/>
-		<NativeBaseProvider theme={theme}>
-			<ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>
-					<Stack>
-						<Stack.Screen name="(drawer)"  options={{ headerShown: false }} />
-						<Stack.Screen name="modal"     options={{ title: 'options', presentation: Platform.OS === 'android' ? 'transparentModal' : 'card' }} />
-						<Stack.Screen name="post/[id]" options={{ title: "Post", presentation: "transparentModal" }} />
-						<Stack.Screen name="new-post"  options={{ title: "New Post!",  presentation: 'transparentModal', 
-							headerLeft:() => ( 							
-							<Pressable onPress={ ()=>{ router.back() } }>
-								<Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "cyan.500" }} color="cyan.500" />
-							</Pressable>
-							),
-							headerRight:() => ( <Button bg={"cyan.300"} zIndex={20} borderWidth={2} borderBottomWidth={4} w={20} h={12} borderRadius={"full"} mr={3}>Post</Button> ) }} />
-					</Stack>
+		<>
+			<StatusBar animated barStyle={theme.config.initialColorMode === 'dark' ? "light-content" : "dark-content"}/>
+			<NativeBaseProvider theme={theme}>
+				<ThemeProvider value={theme.config.initialColorMode === 'dark' ? DarkTheme : DefaultTheme}>
+						<Stack>
+							<Stack.Screen name="(drawer)"  options={{ headerShown: false }} />
+							
+							<Stack.Screen name="post/[id]" options={{ title: "Post", presentation: "transparentModal" }} />
+							<Stack.Screen name="new-post"  options={{ title: "New Post!",  presentation: 'transparentModal', 
+								headerLeft:() => ( 							
+								<Pressable onPress={ ()=>{ router.back() } }>
+									<Icon as={MaterialIcons} name="close" mx={2} size={8} _dark={{ color: "cyan.500" }} color="cyan.500" />
+								</Pressable>
+								),
+								headerRight:() => ( <Button bg={"cyan.300"} zIndex={20} borderWidth={2} borderBottomWidth={4} w={20} h={12} borderRadius={"full"} mr={3}>Post</Button> ) }} />
+						</Stack>
 
-			</ThemeProvider>
-		</NativeBaseProvider>
-	</>
+				</ThemeProvider>
+			</NativeBaseProvider>
+		</>
 	);
 }
