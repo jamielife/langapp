@@ -180,8 +180,7 @@ const tweets = [
     numberOfComments: 4,
     numberOfRetweets: 11,
     numberOfLikes: 99,
-  },
-    
+  }  
 ];
 
 export default tweets;
