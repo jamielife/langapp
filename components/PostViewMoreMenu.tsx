@@ -51,13 +51,14 @@ function PostViewMoreMenu({ post }:PostProps){
             {/* Elipsis Button */}
             <HStack justifyContent={"flex-end"}>
 				<Pressable variant="solid" borderRadius="full" 
-                    onPress={()=> { onToggle(); setShowModal(true); }} bg="white:alpha.50" alignItems={"center"} justifyContent={"center"} borderWidth={1} w={6} h={6}>
-					<Icon as={Entypo} size={4} name="dots-three-horizontal" color="warmGray.500" _dark={{ color: "warmGray.50" }} />
+                    onPress={()=> { onToggle(); setShowModal(true); }} bg="white:alpha.50" _dark={{ bg: "black:alpha.25" }}
+                    alignItems={"center"} justifyContent={"center"} borderWidth={1} w={6} h={6}>
+					    <Icon as={Entypo} size={4} name="dots-three-horizontal" color="warmGray.500" _dark={{ color: "warmGray.50" }} />
 				</Pressable>
 			</HStack>
             
             {/* Modal, animated icons open/close func */}
-            <Modal isOpen={showModal} onClose={() =>{ onToggle(); setShowModal(false); }} bg={"white:alpha.75"} borderWidth={0}>
+            <Modal isOpen={showModal} onClose={() =>{ onToggle(); setShowModal(false); }} bg={"white:alpha.75"} _dark={{ bg: "black:alpha.75" }} borderWidth={0}>
                 <Modal.Content bg={"none"} height={24} justifyContent={"center"} shadow={"none"}>
 
                     <Box alignItems="center" overflow={"visible"} height={ isOpen ? "auto" : 0 } w={ isOpen ? "auto" : 0 } opacity={isOpen ? 1 : 0}>				            

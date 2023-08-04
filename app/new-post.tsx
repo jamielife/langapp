@@ -20,7 +20,7 @@ export default function NewPost(){
     useEffect(() => {
         navigation.setOptions({
             headerRight: () => (
-                <Button bg={"cyan.300"} colorScheme={"cyan"} zIndex={20} borderWidth={2} borderBottomWidth={4} w={20} h={12} borderRadius={"full"} onPress={submitPost} mr={3}>Post</Button>
+                <Button bg={"cyan.300"} _dark={{ bg: "cyan.700" }} colorScheme={"cyan"} zIndex={20} borderWidth={2} borderBottomWidth={4} w={20} h={12} borderRadius={"full"} onPress={submitPost} mr={3}>Post</Button>
             ),
         });
       }, [navigation, postContent]);    
@@ -37,13 +37,6 @@ export default function NewPost(){
         <KeyboardAvoidingView flex={1} 
             keyboardVerticalOffset={165} behavior={Platform.OS === "ios" ? "padding" : "height"} 
             bg={"rgba(255,255,255,.97)"} _dark={{ bg: "rgba(0,0,0,.93)" }}>
-
-
-
-
-
-
-
 
             <View p={3} flex={1}>
                 <HStack flex={1}>

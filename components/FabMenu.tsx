@@ -56,7 +56,7 @@ function FabMenu(){
 	return (
 		<View position={"absolute"} zIndex={0} bottom={0} right={3}>
 
-            <Modal isOpen={showModal} onClose={() =>{ onToggle(); setShowModal(false); handlePress(turnedOn) }}  borderWidth={0} position={"absolute"} bg={"white:alpha.75"}>
+            <Modal isOpen={showModal} onClose={() =>{ onToggle(); setShowModal(false); handlePress(turnedOn) }}  borderWidth={0} position={"absolute"} bg={"white:alpha.75"} _dark={{ bg: "black:alpha.75" }}>
                 <Modal.Content bg={"none"} width={24} shadow={"none"} position={"absolute"} bottom={"52px"} right={"-4px"} overflow={"visible"}>
 
 					<Box alignItems={"center"} overflow={"visible"} height={ isOpen ? "auto" : "full" }>
@@ -129,7 +129,7 @@ function FabMenu(){
 				</Modal.Content>
             </Modal>    					
 
-			<Pressable variant="solid" borderRadius="full" onPress={()=> { onToggle(); setShowModal(true); handlePress(!turnedOn); } } bg="cyan.200" 
+			<Pressable variant="solid" borderRadius="full" onPress={()=> { onToggle(); setShowModal(true); handlePress(!turnedOn); } } bg="cyan.200" _dark={{ bg: "cyan.700" }}
 				alignItems={"center"} justifyContent={"center"} borderWidth={2} w={16} h={16} borderBottomWidth={3}>
 					<Animated.View style={animatedStyle}>
 				<Icon as={MaterialCommunityIcons} size={10} name="plus" color="warmGray.50" _dark={{ color: "warmGray.50" }} />
