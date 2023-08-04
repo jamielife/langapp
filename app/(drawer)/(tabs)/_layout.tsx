@@ -2,7 +2,6 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable, useTheme, View, useColorModeValue, useColorMode } from 'native-base';
 import ProfileMenuIcon from '../../../components/ProfileMenuAvatar';
-import { theme } from '../../../constants/Theme';
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -23,11 +22,11 @@ export default function TabLayout() {
 	const { colors } = useTheme();	
 	const iconColor = useColorModeValue("black", "white");
 	const iconBgColor = useColorModeValue(colors["cyan"][200], colors["cyan"][700]);
-	const { toggleColorMode } = useColorMode();
 
+
+	const { colorMode, toggleColorMode } = useColorMode();
 	function switchColorMode(){
 		toggleColorMode();
-		theme.config.initialColorMode = "light"
 	}
 
 	return (

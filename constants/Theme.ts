@@ -1,10 +1,10 @@
-import { extendTheme, useColorModeValue } from 'native-base'
+import { ITheme, extendTheme, useColorModeValue } from 'native-base'
 import type { Theme } from '@react-navigation/native/src/types';
 
 // Define the config
 const config = {
 	useSystemColorMode: false,
-	initialColorMode: "dark",
+	initialColorMode: "light",
 	background: 'transparent'
 };
 
@@ -129,4 +129,4 @@ export const DefaultTheme: Theme = {
 	},
   };
 
-export const theme = extendTheme({ config, colors });
+export const theme:ITheme = extendTheme({ config, colors });
